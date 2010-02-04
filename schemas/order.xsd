@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright 2009 The MITRE Corporation 
+  
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. 
+  You may obtain a copy of the License at 
+  
+  http://www.apache.org/licenses/LICENSE-2.0 
+  
+  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an 
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
+  language governing permissions and limitations under the License. 
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="http://projecthdata.org/hdata/schemas/2009/06/order"
+  xmlns:order="http://projecthdata.org/hdata/schemas/2009/06/order"
+  xmlns:core="http://projecthdata.org/hdata/schemas/2009/06/core">
+  
+  <xs:import namespace="http://projecthdata.org/hdata/schemas/2009/06/core"
+  schemaLocation="core_data_types.xsd"/>
+  
+  <xs:element name="order">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- ORC-2 -->
+        <xs:element name="placerOrderNumber" type="order:orderNumber" minOccurs="0"/>
+        <!-- ORC-3 -->
+        <xs:element name="fillerOrderNumber" type="order:orderNumber" minOccurs="0"/>
+        <!-- ORC-5 -->
+        <xs:element name="status" type="order:orderStatusType" minOccurs="0"/>
+        <!-- ORC-9 -->
+        <xs:element name="dateTimeOfTransaction" type="xs:dateTime" minOccurs="0"/>
+        <!-- ORC-12 -->
+        <xs:element name="orderingProvider" type="core:person" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="orderNumber">
+    <xs:annotation>
+      <xs:documentation>
+        An identifier that uniquely identifies an individual order and the application that generated that identifier
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="number" type="xs:string"/>
+    <xs:attribute name="assigningApplication" type="xs:string" use="optional"/>
+  </xs:complexType>
+  
+  <xs:complexType name="orderStatusType">
+    <xs:annotation>
+      <xs:documentation>
+        Advance directive type and free text type.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="core:codedValue">
+        <xs:attribute name="code" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="A"/>
+              <xs:enumeration value="CA"/>
+              <xs:enumeration value="CM"/>
+              <xs:enumeration value="DC"/>
+              <xs:enumeration value="ER"/>
+              <xs:enumeration value="HD"/>
+              <xs:enumeration value="IP"/>
+              <xs:enumeration value="RP"/>
+              <xs:enumeration value="SC"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="displayName" use="optional">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Some, but not all, results available"/>
+              <xs:enumeration value="Order was canceled"/>
+              <xs:enumeration value="Order is completed"/>
+              <xs:enumeration value="Order was discontinued"/>
+              <xs:enumeration value="Error, order not found"/>
+              <xs:enumeration value="Order is on hold"/>
+              <xs:enumeration value="In process, unspecified"/>
+              <xs:enumeration value="Order has been replaced"/>
+              <xs:enumeration value="In process, scheduled"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="codeSystemName" type="xs:string" fixed="HL7 Order Status"/>        
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
