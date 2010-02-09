@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-  Copyright 2009 The MITRE Corporation 
+  Copyright 2010 The MITRE Corporation 
   
   Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. 
   You may obtain a copy of the License at 
@@ -12,8 +12,8 @@
   language governing permissions and limitations under the License. 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  targetNamespace="http://projecthdata.org/hdata/schemas/2009/06/order"
-  xmlns:order="http://projecthdata.org/hdata/schemas/2009/06/order"
+  targetNamespace="http://projecthdata.org/hdata/schemas/2010/01/order"
+  xmlns:order="http://projecthdata.org/hdata/schemas/2010/01/order"
   xmlns:core="http://projecthdata.org/hdata/schemas/2009/06/core">
   
   <xs:import namespace="http://projecthdata.org/hdata/schemas/2009/06/core"
@@ -32,6 +32,10 @@
         <xs:element name="dateTimeOfTransaction" type="xs:dateTime" minOccurs="0"/>
         <!-- ORC-12 -->
         <xs:element name="orderingProvider" type="core:person" minOccurs="0"/>
+        <!-- OBR-4 -->
+        <xs:element name="universalServiceId" type="core:codedValue"/>
+        <!-- OBR-7 -->
+        <xs:element name="observationDateTime" type="xs:dateTime" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
