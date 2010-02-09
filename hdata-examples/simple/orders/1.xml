@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order xmlns="http://projecthdata.org/hdata/schemas/2010/01/order"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:core="http://projecthdata.org/hdata/schemas/2009/06/core"
+    xsi:schemaLocation="http://projecthdata.org/hdata/schemas/2010/01/order file:/Users/andrewg/projects/lab-cp/schemas/order.xsd">
+    <placerOrderNumber assigningApplication="H_Dx" number="0001544707"/>
+    <fillerOrderNumber assigningApplication="CPL" number="HB036246"/>
+    <dateTimeOfTransaction>2008-06-13T11:34:00Z</dateTimeOfTransaction>
+    <orderingProvider>
+        <core:name>
+            <core:given>William</core:given>
+            <core:lastname>Mayfield</core:lastname>
+        </core:name>
+    </orderingProvider>
+    
+    <universalServiceId code="" codeSystem=""/>
+</order>

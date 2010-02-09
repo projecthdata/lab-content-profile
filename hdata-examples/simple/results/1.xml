@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result xmlns="http://projecthdata.org/hdata/schemas/2009/06/result"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://projecthdata.org/hdata/schemas/2009/06/result file:/Users/andrewg/projects/hData/schemas/2009/06/result.xsd">
+    <resultId/>
+    <resultDateTime low=""/>
+    <resultType code="" codeSystem=""/>
+    <resultStatus code="completed"/>
+    <resultValue>101</resultValue>
+    <narrative></narrative>
+</result>
