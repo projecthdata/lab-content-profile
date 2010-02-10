@@ -3,9 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://projecthdata.org/hdata/schemas/2009/06/result file:/Users/andrewg/projects/hData/schemas/2009/06/result.xsd">
     <resultId/>
-    <resultDateTime low=""/>
-    <resultType code="" codeSystem=""/>
+    <resultDateTime low="2008-06-13T08:46:00Z"/>
+    <resultType code="1504-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="GLUCOSE 1 HR POST 50 GM"/>
     <resultStatus code="completed"/>
-    <resultValue>101</resultValue>
+    <resultValue>
+        <value>101</value>
+        <units>mg/dl</units>
+    </resultValue>
     <narrative></narrative>
 </result>
