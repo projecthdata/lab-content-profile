@@ -13,5 +13,5 @@
         </core:name>
     </orderingProvider>
     
-    <universalServiceId code="" codeSystem=""/>
+    <universalServiceId code="1504-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="GLUCOSE 1 HR POST 50 GM"/>
 </order>
