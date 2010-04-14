@@ -22,14 +22,22 @@
   <xs:element name="insuranceProvider">
     <xs:complexType>
       <xs:sequence>
+        <!-- IN1-2^1 -->
         <xs:element name="id" type="core:instanceIdentifier"/>
+        <!-- IN1-15 -->
         <xs:element name="healthInsuranceType" type="ip:healthInsuranceTypeCode" minOccurs="0"/>
+        <!-- IN1-4 through IN1-7 -->
         <xs:element name="payer" type="core:actor"/>
+        <!-- IN1-12 and IN1-13 -->
         <xs:element name="healthPlanCoverageDates" type="core:dateRange"/>
+        <!-- PID and IN1-17 -->
         <xs:element name="patient" type="ip:patient"/>
         <xs:element name="financialResponsibilityPartyType" type="ip:financialResponsibilityPartyType"/>
+        <!-- IN1-16, IN1-18 and IN1-36 -->
         <xs:element name="subscriber" type="ip:subscriber"/>
+        <!-- GT1-3 through GT1-7 and GT1-13, GT1-14 -->
         <xs:element name="guarantorInformation" type="ip:guarantorInformation"/>
+        <!-- IN1-2^2 -->
         <xs:element name="healthPlanName" type="xs:string"/>
         <xs:element name="informationSource" type="core:informant" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="narrative" type="xs:string"/>

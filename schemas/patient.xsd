@@ -24,13 +24,19 @@
       <xs:complexContent>
         <xs:extension base="core:person">
           <xs:sequence>
+            <!-- PID-2 -->
             <xs:element name="id" type="xs:string"/>
+            <!-- PID-8 -->
             <xs:element name="gender" type="core:gender" minOccurs="0"/>
             <xs:element name="language" minOccurs="0" maxOccurs="unbounded" type="core:language"/>
+            <!-- PID-7 -->
             <xs:element name="birthtime" type="xs:dateTime" minOccurs="0"/>
+            <!-- PID-16 -->
             <xs:element name="maritialStatus" type="core:maritalStatus" minOccurs="0"/>
+            <!-- PID-10 -->
             <xs:element name="race" type="core:race" maxOccurs="unbounded" minOccurs="0"/>
             <xs:element name="guardian" minOccurs="0" type="core:person"/>
+            <!-- PID-23 -->
             <xs:element name="birthPlace" type="core:address" minOccurs="0" maxOccurs="1"/>
           </xs:sequence>
         </xs:extension>

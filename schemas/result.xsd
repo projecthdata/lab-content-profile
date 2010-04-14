@@ -35,12 +35,19 @@
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
+        <!-- MSH-9 -->
         <xs:element name="resultId" type="core:instanceIdentifier"/>
+        <!-- OBX-14 -->
         <xs:element name="resultDateTime" type="core:dateRange"/>
+        <!-- OBX-3 -->
         <xs:element name="resultType" type="result:resultType"/>
+        <!-- OBX-11 -->
         <xs:element name="resultStatus" type="core:statusCode"/>
+        <!-- OBX-5 -->
         <xs:element name="resultValue" type="xs:anyType"/><!-- CCD CONF-417: SHALL be expressed using UCUM expression when physical quantity -->
+        <!-- DG1-3 -->
         <xs:element name="resultInterpretation" type="core:codedValue" minOccurs="0"/>
+        <!-- OBX-7 -->
         <xs:element name="resultReferenceRange" type="result:resultReferenceRange" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="informationSource" type="core:informant" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="narrative" type="xs:string"/>
