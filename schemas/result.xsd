@@ -18,7 +18,6 @@
   xmlns:core="http://projecthdata.org/hdata/schemas/2009/06/core">
   
   <xs:import namespace="http://projecthdata.org/hdata/schemas/2009/06/core" schemaLocation="core_data_types.xsd"/>
-  <xs:include schemaLocation="result_types.xsd"/>
   
   <xs:element name="result">
     <xs:annotation>
@@ -40,7 +39,7 @@
         <!-- OBX-14 -->
         <xs:element name="resultDateTime" type="core:dateRange"/>
         <!-- OBX-3 -->
-        <xs:element name="resultType" type="result:resultType"/>
+        <xs:element name="resultType" type="core:codedValue"/>
         <!-- OBX-11 -->
         <xs:element name="resultStatus" type="core:statusCode"/>
         <!-- OBX-5 -->
@@ -54,5 +53,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+  <xs:complexType name="resultReferenceRange">
+    <xs:annotation>
+      <xs:documentation>
+        Reference ranges for the observation.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="text" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
 
 </xs:schema>
