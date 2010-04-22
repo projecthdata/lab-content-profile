@@ -41,7 +41,7 @@
         <!-- OBX-3 -->
         <xs:element name="resultType" type="core:codedValue"/>
         <!-- OBX-11 -->
-        <xs:element name="resultStatus" type="core:statusCode"/>
+        <xs:element name="resultStatus" type="result:resultStatusType"/>
         <!-- OBX-5 -->
         <xs:element name="resultValue" type="xs:anyType"/><!-- CCD CONF-417: SHALL be expressed using UCUM expression when physical quantity -->
         <!-- DG1-3 -->
@@ -63,6 +63,53 @@
     <xs:sequence>
       <xs:element name="text" type="xs:string" minOccurs="0"/>
     </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="resultStatusType">
+    <xs:annotation>
+      <xs:documentation>
+        Result status codes pulled from HL7 V2.5.1 Spec. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="core:codedValue">
+        <xs:attribute name="code" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="O"/>
+              <xs:enumeration value="I"/>
+              <xs:enumeration value="S"/>
+              <xs:enumeration value="A"/>
+              <xs:enumeration value="P"/>
+              <xs:enumeration value="C"/>
+              <xs:enumeration value="R"/>
+              <xs:enumeration value="F"/>
+              <xs:enumeration value="X"/>
+              <xs:enumeration value="Y"/>
+              <xs:enumeration value="Z"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="displayName" use="optional">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Order received; specimen not yet received"/>
+              <xs:enumeration value="No results available; specimen received, procedure incomplete"/>
+              <xs:enumeration value="No results available; procedure scheduled, but not done"/>
+              <xs:enumeration value="Some, but not all, results available"/>
+              <xs:enumeration value="Preliminary: A verified early result is available, final results not yet obtained"/>
+              <xs:enumeration value="Correction to results"/>
+              <xs:enumeration value="Results stored; not yet verified"/>
+              <xs:enumeration value="Final results; results stored and verified."/>
+              <xs:enumeration value="No results available; Order canceled."/>
+              <xs:enumeration value="No order on record for this test."/>
+              <xs:enumeration value="No record of this patient."/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="codeSystemName" type="xs:string" fixed="HL7 Order Status"/>        
+      </xs:restriction>
+    </xs:complexContent>
   </xs:complexType>
 
 </xs:schema>
