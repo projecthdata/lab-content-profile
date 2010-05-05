@@ -179,7 +179,7 @@
     
     <xs:complexType name="guarantorInformation">
         <xs:sequence>
-            <xs:element name="effectiveDateOfFinancialResponsibility" type="core:dateRange"/>
+            <xs:element name="effectiveDateOfFinancialResponsibility" type="core:dateRange" minOccurs="0"/>
             <xs:element name="financialResponsibilityParty" type="core:actor"/>
         </xs:sequence>
     </xs:complexType>
