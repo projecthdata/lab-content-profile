@@ -31,7 +31,7 @@
         <!-- ORC-9 -->
         <xs:element name="dateTimeOfTransaction" type="xs:dateTime" minOccurs="0"/>
         <!-- ORC-12 -->
-        <xs:element name="orderingProvider" type="core:person" minOccurs="0"/>
+        <xs:element name="orderingProvider" type="order:orderingProvider" minOccurs="0"/>
         <!-- OBR-4 -->
         <xs:element name="universalServiceId" type="core:codedValue"/>
         <!-- OBR-7 -->
@@ -48,6 +48,27 @@
     </xs:annotation>
     <xs:attribute name="number" type="xs:string"/>
     <xs:attribute name="assigningApplication" type="xs:string" use="optional"/>
+  </xs:complexType>
+  
+  <xs:complexType name="orderingProvider">
+    <xs:annotation>
+      <xs:documentation>
+        This extends the core person type to include an npi element that can be used to contain the ordering provider's National Provide Identifier
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="core:person">
+        <xs:sequence>
+          <xs:element name="npi" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="\d{10}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   
   <xs:complexType name="orderStatusType">
