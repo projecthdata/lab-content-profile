@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hcp:hcp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://projecthdata.org/hdata/schemas/2010/04/hcp http://github.com/projecthdata/hData/raw/master/schemas/2010/04/hcp.xsd"
+ xmlns:hcp="http://projecthdata.org/hdata/schemas/2010/04/hcp"
+ xmlns:core="http://projecthdata.org/hdata/schemas/2009/06/core"
+ name="Lab Content Profile"
+ id="http://projecthdata.org/hdata/content_profile/2010/01/lab_content_profile">
+  <core:extensions>
+      <core:extension>http://projecthdata.org/hdata/schemas/2009/06/insurance_provider</core:extension>
+      <core:extension>http://projecthdata.org/hdata/schemas/2009/06/patient_information</core:extension>
+      <core:extension>http://projecthdata.org/hdata/schemas/2009/06/result</core:extension>
+      <core:extension>http://projecthdata.org/hdata/schemas/2010/01/order</core:extension>
+  </core:extensions>
+  <core:sections>
+      <core:section extensionId="http://projecthdata.org/hdata/schemas/2009/06/patient_information" path="patient_information" name="Patient Information"/>
+      <core:section extensionId="http://projecthdata.org/hdata/schemas/2009/06/result" path="results" name="Results"/>
+      <core:section extensionId="http://projecthdata.org/hdata/schemas/2009/06/insurance_provider" path="insurance_providers" name="Insurance Provider"/>
+      <core:section extensionId="http://projecthdata.org/hdata/schemas/2010/01/order" path="orders" name="Orders"/>
+  </core:sections>
+</hcp:hcp>
