@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://projecthdata.org/hdata/schemas/2009/06/core ../../../hData/schemas/2009/06/root.xsd"
+ xsi:schemaLocation="http://projecthdata.org/hdata/schemas/2009/06/core http://github.com/projecthdata/hData/raw/master/schemas/2009/06/root.xsd"
  xmlns="http://projecthdata.org/hdata/schemas/2009/06/core">
-    <documentId>documentid0</documentId>
-    <version>0.8</version>
+    <id>documentid0</id>
+    <version>0.9</version>
     <created>2010-02-09</created>
     <lastModified>2010-02-09</lastModified>
     <extensions>
-        <extension requirement="mandatory" contentType="text/xml">http://projecthdata.org/hdata/schemas/2009/06/insurance_provider</extension>
-        <extension requirement="mandatory" contentType="text/xml">http://projecthdata.org/hdata/schemas/2009/06/patient_information</extension>
-        <extension requirement="mandatory" contentType="text/xml">http://projecthdata.org/hdata/schemas/2009/06/result</extension>
-        <extension requirement="mandatory" contentType="text/xml">http://projecthdata.org/hdata/schemas/2010/01/order</extension>
+        <extension>http://projecthdata.org/hdata/schemas/2009/06/insurance_provider</extension>
+        <extension>http://projecthdata.org/hdata/schemas/2009/06/patient_information</extension>
+        <extension>http://projecthdata.org/hdata/schemas/2009/06/result</extension>
+        <extension>http://projecthdata.org/hdata/schemas/2010/01/order</extension>
     </extensions>
     <sections>      
-      <section typeId="http://projecthdata.org/hdata/schemas/2009/06/patient_information" path="patient_information" name="Patient Information"/>
-      <section typeId="http://projecthdata.org/hdata/schemas/2009/06/result" path="results" name="Results"/>
-      <section typeId="http://projecthdata.org/hdata/schemas/2009/06/insurance_provider" path="insurance_providers" name="Insurance Provider"/>
-      <section typeId="http://projecthdata.org/hdata/schemas/2010/01/order" path="orders" name="Orders"/>
+      <section extensionId="http://projecthdata.org/hdata/schemas/2009/06/patient_information" path="patient_information" name="Patient Information"/>
+      <section extensionId="http://projecthdata.org/hdata/schemas/2009/06/result" path="results" name="Results"/>
+      <section extensionId="http://projecthdata.org/hdata/schemas/2009/06/insurance_provider" path="insurance_providers" name="Insurance Provider"/>
+      <section extensionId="http://projecthdata.org/hdata/schemas/2010/01/order" path="orders" name="Orders"/>
     </sections>
 </root>
