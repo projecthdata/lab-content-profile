@@ -19,7 +19,20 @@
   
   <xs:import namespace="http://projecthdata.org/hdata/schemas/2009/06/core" schemaLocation="core_data_types.xsd"/>
   
-  <xs:element name="result">
+  <xs:element name="results" type="result:results"/>
+
+  <xs:complexType name="results">
+    <xs:annotation>
+      <xs:documentation>
+        A group of results
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="result" type="result:result" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="result">
     <xs:annotation>
       <xs:documentation>
         This section is used to describe test results/vital signs.
@@ -32,27 +45,26 @@
         encoded content.
       </xs:documentation>
     </xs:annotation>
-    <xs:complexType>
-      <xs:sequence>
-        <!-- MSH-9 -->
-        <xs:element name="resultId" type="core:instanceIdentifier"/>
-        <!-- OBX-14 -->
-        <xs:element name="resultDateTime" type="core:dateRange"/>
-        <!-- OBX-3 -->
-        <xs:element name="resultType" type="core:codedValue"/>
-        <!-- OBX-11 -->
-        <xs:element name="resultStatus" type="result:resultStatusType"/>
-        <!-- OBX-5 -->
-        <xs:element name="resultValue" type="xs:anyType"/><!-- CCD CONF-417: SHALL be expressed using UCUM expression when physical quantity -->
-        <!-- DG1-3 -->
-        <xs:element name="resultInterpretation" type="core:codedValue" minOccurs="0"/>
-        <!-- OBX-7 -->
-        <xs:element name="resultReferenceRange" type="result:resultReferenceRange" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="informationSource" type="core:informant" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="narrative" type="xs:string"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+    <xs:sequence>
+      <!-- MSH-9 -->
+      <xs:element name="resultId" type="core:instanceIdentifier"/>
+      <!-- OBX-14 -->
+      <xs:element name="resultDateTime" type="core:dateRange"/>
+      <!-- OBX-3 -->
+      <xs:element name="resultType" type="core:codedValue"/>
+      <!-- OBX-11 -->
+      <xs:element name="resultStatus" type="result:resultStatusType"/>
+      <!-- OBX-5 -->
+      <xs:element name="resultValue" type="xs:anyType"/><!-- CCD CONF-417: SHALL be expressed using UCUM expression when physical quantity -->
+      <!-- DG1-3 -->
+      <xs:element name="resultInterpretation" type="core:codedValue" minOccurs="0"/>
+      <!-- OBX-7 -->
+      <xs:element name="resultReferenceRange" type="result:resultReferenceRange" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="informationSource" type="core:informant" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="narrative" type="xs:string"/>
+      <xs:element name="results" type="result:results" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="resultReferenceRange">
     <xs:annotation>
